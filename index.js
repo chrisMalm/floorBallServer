@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const postPlayerDecs = require('./routes/player');
-const getPlayer = require('./routes/playerList');
-const deletePlayer = require('./routes/deletePlayer');
-const signIn = require('./routes/login');
+// const mongoose = require('mongoose');
+// const dotenv = require('dotenv');
+// const postPlayerDecs = require('./routes/player');
+// const getPlayer = require('./routes/playerList');
+// const deletePlayer = require('./routes/deletePlayer');
+// const signIn = require('./routes/login');
 
-const cors = require('cors');
+// const cors = require('cors');
 
-dotenv.config();
+// dotenv.config();
 
 const port = process.env.PORT || 4000;
 
@@ -19,11 +19,11 @@ const port = process.env.PORT || 4000;
 
 //   () => console.log('Db connected')
 // );
+app.use(express.json());
+// app.use(cors());
 app.get('/', (req, res) => {
   res.end('hej');
 });
-app.use(express.json());
-app.use(cors());
 // app.use('/uploads', express.static('uploads'));
 // app.use('/playerData', postPlayerDecs);
 // app.use('/playerList', getPlayer);
