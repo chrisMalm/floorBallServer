@@ -16,7 +16,7 @@ const upload = multer({ storage: storage });
 
 // post desc image and name for player
 
-router.post('/', upload.single('image'), (req, res) => {
+router.post('/playerData', upload.single('image'), (req, res) => {
   const playerDesc = new playerTemplateCopy({
     name: req.body.name,
     desc: req.body.description,

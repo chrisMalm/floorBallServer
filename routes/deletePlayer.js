@@ -5,7 +5,7 @@ let newPlayerModel = require('../models/newPlayerModal');
 
 // radera en spelare från databasen
 
-router.delete('/', (req, res) => {
+router.delete('/deletePlayer/:id', (req, res) => {
   const id = req.body.id;
 
   newPlayerModel

@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 // logga in som admin
 
-router.post('/', async (req, res) => {
+router.post('/signin', async (req, res) => {
   const { username, password } = req.body;
 
   try {
