@@ -4,7 +4,7 @@ let newPlayerModel = require('../models/newPlayerModal');
 
 // Get player list thats been posted
 
-router.get('/', (req, res) => {
+router.get('/playerList', (req, res) => {
   newPlayerModel
     .find({})
     .then((doc) => {
