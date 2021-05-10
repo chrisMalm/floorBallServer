@@ -6,14 +6,13 @@ let newPlayerModel = require('../models/newPlayerModal');
 // radera en spelare från databasen
 
 router.delete('/deletePlayer/:id', (req, res) => {
-  const id = req.body.id;
+  const id = req.params.id;
 
   newPlayerModel
-    .findOneAndDelete(id)
+    .findOneAndDelete({ _id: id })
     .then((deletedPlayer) => {
+      console.log(deletedPlayer, 'deletedpl');
       res.status(200).json(deletedPlayer);
-      // const DIR = 'uploads';
-      // fs.unlinkSync(DIR + '/' + playerImg + '.jpg');
     })
     .catch((err) => {
       res.status(500).send(err);

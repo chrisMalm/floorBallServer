@@ -7,7 +7,7 @@ const getPlayer = require('./routes/playerList');
 const deletePlayer = require('./routes/deletePlayer');
 const signIn = require('./routes/login');
 
-// const cors = require('cors');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -20,10 +20,10 @@ mongoose.connect(
   () => console.log('Db connected')
 );
 app.use(express.json());
-// app.use(cors());
-app.get('/', (req, res) => {
-  res.end('hopp');
-});
+app.use(cors());
+// app.get('/', (req, res) => {
+//   res.end('hopp');
+// });
 app.use('/uploads', express.static('uploads'));
 app.use(postPlayerDecs);
 app.use(getPlayer);
