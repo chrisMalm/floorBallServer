@@ -21,9 +21,9 @@ mongoose.connect(
 );
 app.use(express.json());
 app.use(cors());
-// app.get('/', (req, res) => {
-//   res.end('hopp');
-// });
+app.get('/', (req, res) => {
+  res.end('hopp');
+});
 app.use('/uploads', express.static('uploads'));
 app.use(postPlayerDecs);
 app.use(getPlayer);

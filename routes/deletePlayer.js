@@ -7,6 +7,9 @@ let newPlayerModel = require('../models/newPlayerModal');
 
 router.delete('/deletePlayer/:id', (req, res) => {
   const id = req.params.id;
+  const imageId = req.body.imgId;
+
+  fs.unlinkSync(`uploads/${imageId}`);
 
   newPlayerModel
     .findOneAndDelete({ _id: id })
